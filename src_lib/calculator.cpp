@@ -29,7 +29,7 @@ double Calculator::CalculateExpression(Expression *expression) {
   CalculateExpression(expression->right);
   switch (expression->op) {
   case Operation::ADD:
-    expression->value = expression->left->value - expression->right->value;
+    expression->value = expression->left->value + expression->right->value;
     break;
   case Operation::SUB:
     expression->value = expression->left->value - expression->right->value;
@@ -38,7 +38,7 @@ double Calculator::CalculateExpression(Expression *expression) {
     expression->value = expression->left->value * expression->right->value;
     break;
   case Operation::DIV:
-    expression->value = expression->left->value / 1 * expression->right->value;
+    expression->value = expression->left->value / expression->right->value;
     break;
   case Operation::POW:
     expression->value = pow(expression->left->value, expression->right->value);
